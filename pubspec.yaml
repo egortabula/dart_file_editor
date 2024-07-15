@@ -1,0 +1,12 @@
+name: dart_file_editor
+description: The dart_file_editor package provides utilities for parsing and editing Dart files. It includes methods for locating class definitions, adding import statements, modifying code content, and more. Ideal for developers who need to programmatically manipulate Dart source code.
+version: 0.1.0+1
+
+
+environment:
+  sdk: ^3.4.0
+
+dev_dependencies:
+  mocktail: ^1.0.4
+  test: ^1.25.7
+  very_good_analysis: ^6.0.0
