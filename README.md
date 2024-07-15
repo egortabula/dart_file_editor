@@ -112,7 +112,6 @@ void main() {
 | ------ | ------ |
 | addContentToClass | Adds the specified content to the specified class in the file content. |
 | addImports | Adds the specified import statements to the top of the file content. |
-|  |  |
 
 ### IndexHelpers
 | Method | Description |
@@ -122,7 +121,6 @@ void main() {
 | findLastIndexContaining | Finds the last index of a line that contains the specified element (substring). |
 | findLastIndexMatching | Finds the last index of a line that exactly matches the specified element. |
 | findLastIndexStartsWith | Finds the last index of a line that starts with the specified element. |
-|  |  |
 
 ## Contributing
 
