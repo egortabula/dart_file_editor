@@ -1,6 +1,12 @@
 name: dart_file_editor
 description: The dart_file_editor package provides utilities for parsing and editing Dart files. It includes methods for locating class definitions, adding import statements, modifying code content, and more. Ideal for developers who need to programmatically manipulate Dart source code.
-version: 0.1.0+1
+version: 0.1.0+2
+
+homepage: https://github.com/egortabula/dart_file_editor
+documentation: https://github.com/egortabula/dart_file_editor/blob/main/README.md
+repository: https://github.com/egortabula/dart_file_editor
+issue_tracker: https://github.com/egortabula/dart_file_editor/issues
+
 
 
 environment:
