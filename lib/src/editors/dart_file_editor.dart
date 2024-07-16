@@ -90,7 +90,7 @@ class DartFileEditor {
 
     for (var i = listStartIndex; i < lines.length; i++) {
       if (lines[i].contains('];')) {
-        lines.insert(i, '  $elementToAdd,');
+        lines.insert(i, elementToAdd);
         break;
       }
     }
