@@ -62,10 +62,20 @@ class IndexHelpers {
     // Split [content] into separate lines
     final lines = ContentHelper.splitByLines(content);
 
-    // return class start index
-    return lines.indexWhere(
-      (val) => val.contains('class $className {'),
+    final regex = RegExp(
+      r'\bclass\s+' +
+          className +
+          r'(\s*<.*?>\s*)?(\s+extends\s+\w+)?(\s+with\s+\w+)?(\s+implements\s+\w+)?\s*\{',
     );
+
+    // Find the index of the line that matches the class definition
+    for (var i = 0; i < lines.length; i++) {
+      if (regex.hasMatch(lines[i])) {
+        return i;
+      }
+    }
+
+    throw Exception('Class $className not found in the content.');
   }
 
   /// Finds the ending index of the specified class in the content.
@@ -98,10 +108,9 @@ class IndexHelpers {
     String content, {
     required String line,
   }) {
-      // Split the file content into lines
+    // Split the file content into lines
     final lines = ContentHelper.splitByLines(content);
 
-    
     final lineIndex = lines.indexWhere((val) => val.contains(line));
 
     return lineIndex;
