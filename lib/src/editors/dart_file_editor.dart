@@ -1,7 +1,7 @@
 import 'package:dart_file_editor/dart_file_editor.dart';
 
 class DartFileEditor {
-  /// Adds the specified [contentToAdd] to the specified 
+  /// Adds the specified [contentToAdd] to the specified
   /// [className] in the content.
   ///
   /// This method splits the [content] into separate lines, finds the end index
@@ -61,6 +61,40 @@ class DartFileEditor {
     }
 
     // Join the lines back into a single string
+    return ContentHelper.joinByLines(lines);
+  }
+
+  /// Adds a new element to a list in the file content.
+  ///
+  /// This method finds the specified list by its name and adds the new element
+  /// before the closing bracket of the list.
+  ///
+  /// Parameters:
+  /// - `content`: The content of the file.
+  /// - `listName`: The name of the list to add an element to.
+  /// - `elementToAdd`: The element to add to the list.
+  static String addElementToList(
+    String content, {
+    required String listName,
+    required String elementToAdd,
+  }) {
+    final lines = ContentHelper.splitByLines(content);
+    final listStartIndex = IndexHelpers.findIndexOf(
+      content,
+      element: listName,
+    );
+
+    if (listStartIndex == -1) {
+      throw Exception('List $listName not found in the content.');
+    }
+
+    for (var i = listStartIndex; i < lines.length; i++) {
+      if (lines[i].contains('];')) {
+        lines.insert(i, '  $elementToAdd,');
+        break;
+      }
+    }
+
     return ContentHelper.joinByLines(lines);
   }
 }
