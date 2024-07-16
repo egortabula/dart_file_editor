@@ -11,3 +11,10 @@
 - feat: added findIndexOf method
 - feat: addElementToList
 - feat: added addElementToList tests
+
+# 0.1.2+4
+
+- feat: added findLineIndex
+- fix: addImports (remove space)
+- feat: findClassStartIndex added regex
+ 
