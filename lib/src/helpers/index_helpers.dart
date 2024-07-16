@@ -12,6 +12,17 @@ class IndexHelpers {
     return lines.lastIndexWhere((val) => val.contains(element));
   }
 
+  /// Finds the last index of a line that contains the specified [element].
+  ///
+  /// This method splits the [content] into separate lines and then searches
+  /// for the last line that contains the specified [element].
+  ///
+  /// Returns the index of the last line that contains the [element].
+  static int findIndexOf(String content, {required String element}) {
+    final lines = ContentHelper.splitByLines(content);
+    return lines.indexWhere((val) => val.contains(element));
+  }
+
   /// Finds the last index of a line that exactly
   /// matches the specified [element].
   ///
@@ -43,7 +54,7 @@ class IndexHelpers {
   /// Finds the starting index of the specified class in the content.
   ///
   /// This method splits the [content] into separate lines and then searches
-  /// for the line that contains the definition of the class 
+  /// for the line that contains the definition of the class
   /// with the name [className].
   ///
   /// Returns the index of the line where the class definition starts.
