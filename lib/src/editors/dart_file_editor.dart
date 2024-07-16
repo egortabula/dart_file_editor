@@ -5,7 +5,7 @@ class DartFileEditor {
   /// [className] in the content.
   ///
   /// This method splits the [content] into separate lines, finds the end index
-  /// of the class with the name [className], and then 
+  /// of the class with the name [className], and then
   /// inserts the [contentToAdd]
   /// just before the closing curly brace of the class.
   ///
@@ -18,7 +18,7 @@ class DartFileEditor {
   }) {
     final lines = ContentHelper.splitByLines(content);
     final indexToInsert = IndexHelpers.findClassEndIndex(className, content);
-    lines.insert(indexToInsert, '  $contentToAdd');
+    lines.insert(indexToInsert, contentToAdd);
     final result = ContentHelper.joinByLines(lines);
     return result;
   }
@@ -26,7 +26,7 @@ class DartFileEditor {
   /// Adds the specified [imports] to the top of the file content.
   ///
   /// This method splits the [content] into separate lines, finds the end index
-  /// of existing imports, and then inserts the [imports] at the 
+  /// of existing imports, and then inserts the [imports] at the
   /// correct position.If an import is already present, it won't be added again.
   ///
   /// Returns the modified content with the added [imports].
