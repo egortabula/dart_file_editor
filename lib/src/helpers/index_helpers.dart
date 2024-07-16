@@ -92,4 +92,18 @@ class IndexHelpers {
     // Return the final index of the closing curly brace
     return startIndex + endClassIndex;
   }
+
+  /// Finds the index of the line containing [line]
+  static int findLineIndex(
+    String content, {
+    required String line,
+  }) {
+      // Split the file content into lines
+    final lines = ContentHelper.splitByLines(content);
+
+    
+    final lineIndex = lines.indexWhere((val) => val.contains(line));
+
+    return lineIndex;
+  }
 }
